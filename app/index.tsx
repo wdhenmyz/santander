@@ -1,18 +1,45 @@
 import {SafeAreaView} from "react-native-safe-area-context"
 import {StatusBar, Text, StyleSheet, Pressable, View, TextInput, ImageBackground, ScrollView, Image} from "react-native"
-import {Link, router} from "expo-router"
+import {Link, router, Stack} from "expo-router"
+
+/*
+  const sair = () => {
+    alert("saindo...")
+  }
+      <Stack.Screen options={{
+        title:'santander',
+        headerTitleAlign: 'center',
+        headerRight: () => <Button title="sair" onPress={sair}/>,
+      }} />
+  configurar o stack sem precisar do layout
+*/
 
 export default function Screen (){
   const click = () => {
-    router.navigate('/home')
+    router.navigate('home')
   }
 
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar/>
+      
       <ScrollView contentContainerStyle={{alignItems: 'center'}} style={styles.scrollView}>
         <View style={styles.paragrafo}>
-            <Text style={styles.paragrafo}>santander</Text>
+          <Image source={require('../assets/logo.png')} style={styles.logo}/>
+          <Text style={styles.paragrafo}>santander</Text>
+
+          <View>
+            <Link href='/home' asChild>
+              <Pressable
+                style={styles.login} 
+                onPress={click}
+              >
+                <Text style={styles.paragrafo}>login</Text>  
+                      
+              </Pressable>
+            </Link>  
+          </View>
+
         </View>
         
 
@@ -210,15 +237,8 @@ export default function Screen (){
                   </Text>
                 </View>
               
-                <Link href='/home' asChild>
-                  <Pressable style={styles.btn} onPress={click}>
-                      <Text>ir para home</Text>
-                  </Pressable>
-                </Link>
             </View>
 
-        
-            
         </ScrollView>
     </SafeAreaView>
   );
@@ -244,9 +264,26 @@ const styles = StyleSheet.create ({
         fontWeight: 'bold',
         fontSize: 20,
         marginBottom: 10,
-        alignItems: 'flex-start',
-        width: '100%',
-        marginLeft: 10,
+        alignItems: 'center',
+        width: '90%',
+        marginLeft: 5,
+        flexDirection: 'row',
+        flex: 1,
+      },
+
+      logo: {
+        width: 30,
+        height: 30,
+      },
+
+      login:{
+        borderWidth: 1,
+        borderColor: 'red',
+        borderRadius: 5,
+        width: 58,
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 40,
       },
 
       image: {
@@ -370,7 +407,7 @@ const styles = StyleSheet.create ({
         flex: 1,
         backgroundColor: 'black',
         width: '100%',
-        height: 700,
+        height: 640,
         paddingTop: 70,
         alignItems: 'center',
       },
