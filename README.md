@@ -9,10 +9,11 @@ Este projeto é parte de Senac RN.
 ## Funcionalidades atuais
 
 - [x] página de amostra
+- [x] página de login
 
 ## Tecnologias Utilizadas
 
-- **Front-end**: React Native, HTML5, typescipt, expo 
+- **Front-end**: React Native, HTML5, typescipt, expo, javascript
 
 ## Como Executar o Projeto
 
