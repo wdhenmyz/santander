@@ -12,6 +12,14 @@ import {Link, router, Stack} from "expo-router"
         headerRight: () => <Button title="sair" onPress={sair}/>,
       }} />
   configurar o stack sem precisar do layout
+
+
+  <link href="/termos">Ir para termos</link>  
+  <link href="/frete">Ir para termos</link>  
+  // para redirecionar agrupamentos ignorando a pasta e vai direto para o arquivo
+
+  <link href="/profile/1">perfil 1</link>  
+  <link href="/profile/2">perfil 2</link> 
 */
 
 export default function Screen (){
